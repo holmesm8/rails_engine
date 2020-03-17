@@ -6,10 +6,10 @@ RSpec.describe Invoice, type: :model do
     it { should validate_presence_of :status}
   end 
 
-  # describe 'relationships' do 
-  #   it { should have_many }
-  #   it { should have_many().through() }
-  # end 
+  describe 'relationships' do 
+    it { should belong_to :customers}
+    # it { should have_many().through() }
+  end 
 
   # describe 'methods' do
   # end
