@@ -7,10 +7,10 @@ RSpec.describe Transaction, type: :model do
     it { should validate_presence_of :result}
   end 
 
-  # describe 'relationships' do 
-  #   it { should have_many }
-  #   it { should have_many().through() }
-  # end 
+  describe 'relationships' do 
+    it { should belong_to :invoice }
+    # it { should have_many().through() }
+  end 
 
   # describe 'methods' do
   # end
