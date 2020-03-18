@@ -14,7 +14,12 @@ RSpec.describe Item, type: :model do
     it { should have_many(:invoices).through(:invoice_items) }
   end 
 
-  # describe 'methods' do
-  # end
+  describe 'methods' do
+    it "can convert unit_price to two decimal places" do
+      merchant1 = create(:merchant)
+      item1 = Item.new(name: "Banana", description: "Ripe", unit_price: 50, merchant_id: merchant1.id)
 
+      expect(item1.unit_price_converter).to eq(0.5)
+    end
+  end
 end
