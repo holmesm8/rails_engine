@@ -40,7 +40,26 @@ describe "Items API" do
 
   it "can update an existing item" do
     merchant1 = create(:merchant)
-    id = create(:item).id
+    id = create(:item, merchant_id: merchant1.id).id
+    previous_name = Item.last.name
+    item_params = { name: "Tetris" }
+
+    put "/api/v1/items/#{id}", params: {item: item_params}
+    item = Item.find_by(id: id)
+
+    expect(response).to be_successful
+    expect(item.name).to_not eq(previous_name)
+    expect(item.name).to eq("Tetris")
+  end
+
+  it "can destroy an item" do
+    merchant1 = create(:merchant)
+    item1 = create(:item, merchant_id: merchant1.id)
+
+    expect{ delete "/api/v1/items/#{item1.id}" }.to change(Item, :count).by(-1)
+
+    expect(response).to be_success
+    expect{Item.find(item1.id)}.to raise_error(ActiveRecord::RecordNotFound)
   end
 
 end
