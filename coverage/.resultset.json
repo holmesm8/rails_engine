@@ -204,122 +204,14 @@
           null
         ]
       },
-      "/Users/mattholmes/turing/3module/projects/rails_engine/config/routes.rb": {
-        "lines": [
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/mattholmes/turing/3module/projects/rails_engine/app/models/customer.rb": {
+      "/Users/mattholmes/turing/3module/projects/rails_engine/spec/factories/items.rb": {
         "lines": [
           1,
           1,
+          4,
+          4,
+          4,
           1,
-          null,
-          1,
-          null
-        ]
-      },
-      "/Users/mattholmes/turing/3module/projects/rails_engine/app/models/application_record.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/mattholmes/turing/3module/projects/rails_engine/spec/models/invoice_item_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          null,
-          1,
-          2,
-          2,
-          null,
-          null,
-          1,
-          2,
-          2,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/mattholmes/turing/3module/projects/rails_engine/app/models/invoice_item.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/mattholmes/turing/3module/projects/rails_engine/spec/models/invoice_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          null,
-          1,
-          2,
-          null,
-          null,
-          1,
-          2,
-          2,
-          2,
-          2,
-          2,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/mattholmes/turing/3module/projects/rails_engine/app/models/invoice.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/mattholmes/turing/3module/projects/rails_engine/spec/models/item_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          null,
-          1,
-          2,
-          2,
-          2,
-          null,
-          null,
-          1,
-          2,
-          2,
-          2,
-          null,
-          null,
-          null,
-          null,
           null,
           null
         ]
@@ -337,25 +229,18 @@
           null
         ]
       },
-      "/Users/mattholmes/turing/3module/projects/rails_engine/spec/models/merchant_spec.rb": {
+      "/Users/mattholmes/turing/3module/projects/rails_engine/app/models/application_record.rb": {
         "lines": [
           1,
-          null,
           1,
-          null,
+          null
+        ]
+      },
+      "/Users/mattholmes/turing/3module/projects/rails_engine/spec/factories/merchants.rb": {
+        "lines": [
+          1,
           1,
           2,
-          null,
-          null,
-          null,
-          1,
-          2,
-          2,
-          null,
-          null,
-          null,
-          null,
-          null,
           null,
           null
         ]
@@ -370,39 +255,14 @@
           null
         ]
       },
-      "/Users/mattholmes/turing/3module/projects/rails_engine/spec/models/transaction_spec.rb": {
+      "/Users/mattholmes/turing/3module/projects/rails_engine/config/routes.rb": {
         "lines": [
-          1,
-          null,
-          1,
-          null,
-          1,
-          2,
-          2,
-          null,
-          null,
-          1,
-          2,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/mattholmes/turing/3module/projects/rails_engine/app/models/transaction.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
           1,
           null,
           null
         ]
       }
     },
-    "timestamp": 1584474829
+    "timestamp": 1584492472
   }
 }
