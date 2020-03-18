@@ -11,7 +11,8 @@ describe "Items API" do
 
     expect(response).to be_successful
 
-    items = JSON.parse(response.body)
+    items = JSON.parse(response.body, symbolize_names: true)[:data]
+
     expect(items.count).to eq(3)
   end
 
@@ -21,10 +22,10 @@ describe "Items API" do
 
     get "/api/v1/items/#{item1.id}"
 
-    item = JSON.parse(response.body)
+    item = JSON.parse(response.body, symbolize_names: true)[:data]
 
     expect(response).to be_successful
-    expect(item["id"]).to eq(item1.id)
+    expect(item[:id]).to eq(item1.id.to_s)
   end
 
   it "can create a new item" do
@@ -61,5 +62,4 @@ describe "Items API" do
     expect(response).to be_success
     expect{Item.find(item1.id)}.to raise_error(ActiveRecord::RecordNotFound)
   end
-
 end

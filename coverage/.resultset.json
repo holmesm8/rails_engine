@@ -304,8 +304,18 @@
           1,
           null
         ]
+      },
+      "/Users/mattholmes/turing/3module/projects/rails_engine/app/serializers/item_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1584503398
+    "timestamp": 1584505812
   }
 }
