@@ -27,4 +27,20 @@ describe "Items API" do
     expect(item["id"]).to eq(item1.id)
   end
 
+  it "can create a new item" do
+    merchant1 = create(:merchant)
+    item_params = { name: "Super Mario World 88", description: "Simulator", unit_price: 20, merchant_id: merchant1.id}
+
+    post "/api/v1/items", params: {item: item_params}
+    item = Item.last
+
+    expect(response).to be_successful
+    expect(item.name).to eq(item_params[:name])
+  end
+
+  it "can update an existing item" do
+    merchant1 = create(:merchant)
+    id = create(:item).id
+  end
+
 end
