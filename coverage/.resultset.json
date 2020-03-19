@@ -244,7 +244,7 @@
         "lines": [
           1,
           1,
-          7,
+          14,
           null,
           null
         ]
@@ -264,6 +264,7 @@
           1,
           null,
           null,
+          1,
           1,
           1,
           1,
@@ -507,6 +508,72 @@
           null
         ]
       },
+      "/Users/mattholmes/turing/3module/projects/rails_engine/spec/requests/api/v1/merchants_request_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          2,
+          null,
+          1,
+          2,
+          null,
+          null
+        ]
+      },
       "/Users/mattholmes/turing/3module/projects/rails_engine/app/controllers/api/v1/items_controller.rb": {
         "lines": [
           1,
@@ -557,8 +624,48 @@
           1,
           null
         ]
+      },
+      "/Users/mattholmes/turing/3module/projects/rails_engine/app/controllers/api/v1/merchants_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/mattholmes/turing/3module/projects/rails_engine/app/serializers/merchant_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1584507651
+    "timestamp": 1584572640
   }
 }
