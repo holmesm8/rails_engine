@@ -2,8 +2,8 @@ require 'csv'
 
 task :import => :environment do
 
-  # models = [Customer, Merchant, Item, Invoice, InvoiceItem, Transaction]
-  # models.each {|model| model.destroy_all}
+  models = [Customer, Merchant, Item, Invoice, InvoiceItem, Transaction]
+  models.each {|model| model.destroy_all}
 
   puts "Importing Customers"
 
@@ -26,9 +26,11 @@ task :import => :environment do
   puts "Importing Items"
 
   items = CSV.read("./db/data/items.csv", headers: true, header_converters: :symbol)
-  items.each do |item| 
+  items.each do |item|
     ActiveRecord::Base.connection.reset_pk_sequence!('items')
-    Item.create!(item.to_h)
+    new_item = Item.new(item.to_h)
+    new_item.unit_price = (new_item.unit_price / 100.to_f)
+    new_item.save
   end
 
   ActiveRecord::Base.connection.execute('ALTER SEQUENCE items_id_seq RESTART WITH 2484')
