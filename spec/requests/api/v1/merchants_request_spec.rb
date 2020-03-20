@@ -75,4 +75,26 @@ describe "Merchants API" do
     expect(response).to be_success
     expect(items.count).to eq(5)
   end
+
+  it "can return a single record that matches a name" do
+    merchant1 = create(:merchant)
+
+    get "/api/v1/merchants/find?name=#{merchant1.name}"
+
+    merchant = JSON.parse(response.body)["data"]
+
+    expect(response).to be_successful
+    expect(merchant[0]["attributes"]["name"]).to eq(merchant1.name)
+  end
+
+  it "can return a single record that matches an id" do
+    merchant1 = create(:merchant)
+
+    get "/api/v1/merchants/find?id=#{merchant1.id}"
+
+    merchant = JSON.parse(response.body)["data"]
+
+    expect(response).to be_successful
+    expect(merchant[0]["attributes"]["id"]).to eq(merchant1.id)
+  end
 end

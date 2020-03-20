@@ -77,4 +77,73 @@ describe "Items API" do
     expect(response).to be_successful
     expect(merchant[:attributes][:id]).to eq(merchant1.id)
   end
+
+  it "can return a single record that matches a name" do
+    merchant1 = create(:merchant)
+    item1 = create(:item, merchant_id: merchant1.id)
+
+    get "/api/v1/items/find?name=#{item1.name}"
+
+    item = JSON.parse(response.body)["data"]
+    expect(response).to be_successful
+    expect(item[0]["attributes"]["name"]).to eq(item1.name)
+  end
+
+  it "can return a single record that matches a name" do
+    merchant1 = create(:merchant)
+    item1 = create(:item, merchant_id: merchant1.id)
+
+    get "/api/v1/items/find?description=#{item1.description}"
+
+    item = JSON.parse(response.body)["data"]
+
+    expect(response).to be_successful
+    expect(item[0]["attributes"]["description"]).to eq(item1.description)
+  end
+
+  it "can return a single record that matches a unit price" do
+    merchant1 = create(:merchant)
+    item1 = create(:item, merchant_id: merchant1.id)
+
+    get "/api/v1/items/find?unit_price=#{item1.unit_price}"
+
+    item = JSON.parse(response.body)["data"]
+
+    expect(response).to be_successful
+    expect(item[0]["attributes"]["unit_price"]).to eq(item1.unit_price)
+  end
+
+  it "can return a single record that matches a merchant_id" do
+    merchant1 = create(:merchant)
+    item1 = create(:item, merchant_id: merchant1.id)
+
+    get "/api/v1/items/find?merchant_id=#{item1.merchant_id}"
+
+    item = JSON.parse(response.body)["data"]
+
+    expect(response).to be_successful
+    expect(item[0]["attributes"]["merchant_id"]).to eq(item1.merchant_id)
+
+    item2 = create(:item, merchant_id: merchant1.id)
+
+    get "/api/v1/items/find?merchant_id=#{item1.merchant_id}"
+    item = JSON.parse(response.body)["data"]
+
+    expect(response).to be_successful
+    expect(item[0]["attributes"]["merchant_id"]).to eq(item2.merchant_id)
+  end
+
+  # it "can return a single record that matches a created at" do
+  #   merchant1 = create(:merchant)
+  #   item1 = create(:item, merchant_id: merchant1.id)
+
+  #   get "/api/v1/items/find?unit_price=#{item1.created_at}"
+  #   item = JSON.parse(response.body)["data"]
+  #   require 'pry'; binding.pry
+
+  #   expect(response).to be_successful
+  #   expect(item[0]["attributes"]["unit_price"]).to eq(item1.unit_price)
+  # end
+
+
 end
