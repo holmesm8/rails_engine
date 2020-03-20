@@ -2,7 +2,7 @@ class Api::V1::Items::FindController < ApplicationController
   def show
     if find_params[:name] || find_params[:description]
       attribute = find_params.keys.first
-      render json: ItemSerializer.new(Item.where("lower(#{attribute}) = ?", find_params[attribute.to_sym].downcase))
+      render json: ItemSerializer.new(Item.where(request.query_parameters))
     else
       render json: ItemSerializer.new(Item.where(find_params))
     end
