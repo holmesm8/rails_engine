@@ -208,9 +208,9 @@
         "lines": [
           1,
           1,
-          12,
-          12,
-          12,
+          6,
+          6,
+          6,
           1,
           null,
           null
@@ -272,6 +272,9 @@
           null,
           1,
           1,
+          null,
+          1,
+          1,
           1,
           null,
           null,
@@ -281,7 +284,7 @@
           null
         ]
       },
-      "/Users/mattholmes/turing/3module/projects/rails_engine/app/controllers/api/v1/items_controller.rb": {
+      "/Users/mattholmes/turing/3module/projects/rails_engine/app/controllers/api/v1/merchants_controller.rb": {
         "lines": [
           1,
           1,
@@ -293,21 +296,21 @@
           null,
           null,
           1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
           2,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          null,
-          1,
-          3,
           null,
           null
         ]
@@ -315,24 +318,6 @@
       "/Users/mattholmes/turing/3module/projects/rails_engine/app/controllers/application_controller.rb": {
         "lines": [
           1,
-          null
-        ]
-      },
-      "/Users/mattholmes/turing/3module/projects/rails_engine/app/serializers/item_serializer.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/mattholmes/turing/3module/projects/rails_engine/app/controllers/api/v1/items/merchants_controller.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
           null
         ]
       },
@@ -345,27 +330,45 @@
           null
         ]
       },
-      "/Users/mattholmes/turing/3module/projects/rails_engine/app/controllers/api/v1/items/find_controller.rb": {
+      "/Users/mattholmes/turing/3module/projects/rails_engine/app/controllers/api/v1/merchants/items_controller.rb": {
         "lines": [
           1,
           1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/mattholmes/turing/3module/projects/rails_engine/app/serializers/item_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/mattholmes/turing/3module/projects/rails_engine/app/controllers/api/v1/merchants/find_controller.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
           5,
-          2,
-          2,
-          null,
-          3,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          16,
           null,
           null
         ]
       }
     },
-    "timestamp": 1584672553
+    "timestamp": 1584673536
   }
 }
