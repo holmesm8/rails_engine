@@ -14,7 +14,7 @@
       <img src="./assets/0.12.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2020-03-20T16:56:05-06:00">2020-03-20T16:56:05-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2020-03-20T17:00:44-06:00">2020-03-20T17:00:44-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -30,7 +30,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.4
+         1.42
        </span>
     </span> hits/line
     )
@@ -43,8 +43,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>351</b> relevant lines,
-    <span class="green"><b>351</b> lines covered</span> and
+    <b>363</b> relevant lines,
+    <span class="green"><b>363</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
   100.0%
@@ -110,7 +110,7 @@
             <td class="cell--number">9</td>
             <td class="cell--number">9</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.44</td>
+            <td class="cell--number">2.33</td>
             
           </tr>
         
@@ -396,7 +396,7 @@
             <td class="cell--number">3</td>
             <td class="cell--number">3</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">8.33</td>
+            <td class="cell--number">9.00</td>
             
           </tr>
         
@@ -469,9 +469,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#9c5ea4a0b3789af8abbe1cfea404313ad99173ff" class="src_link" title="spec/requests/api/v1/merchants_request_spec.rb">spec/requests/api/v1/merchants_request_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">100</td>
-            <td class="cell--number">61</td>
-            <td class="cell--number">61</td>
+            <td class="cell--number">120</td>
+            <td class="cell--number">73</td>
+            <td class="cell--number">73</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.03</td>
             
@@ -1164,8 +1164,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="3">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="4" data-linenumber="3">
+            <span class="hits">4</span>
             
 
             
@@ -1208,8 +1208,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="7">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="3" data-linenumber="7">
+            <span class="hits">3</span>
             
 
             
@@ -1285,8 +1285,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="4" data-linenumber="14">
-            <span class="hits">4</span>
+          <li class="covered" data-hits="8" data-linenumber="14">
+            <span class="hits">8</span>
             
 
             
@@ -5281,8 +5281,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="23" data-linenumber="3">
-            <span class="hits">23</span>
+          <li class="covered" data-hits="25" data-linenumber="3">
+            <span class="hits">25</span>
             
 
             
@@ -8235,8 +8235,8 @@
     
 
     <div class="t-line-summary">
-      <b>61</b> relevant lines.
-      <span class="green"><b>61</b> lines covered</span> and
+      <b>73</b> relevant lines.
+      <span class="green"><b>73</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -9338,6 +9338,226 @@
       
         <div>
           <li class="never" data-hits="" data-linenumber="100">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="101">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    it &quot;can return a single record that matches a created at&quot; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="102">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    merchant1 = create(:merchant, created_at: &quot;2012-03-27 14:53:59 UTC&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="103">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="104">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    get &quot;/api/v1/merchants/find?created_at=#{merchant1.created_at}&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="105">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    merchant = JSON.parse(response.body)[&quot;data&quot;]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="106">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="107">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(response).to be_successful</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="108">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(merchant[0][&quot;attributes&quot;][&quot;id&quot;]).to eq(merchant1.id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="109">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="110">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="111">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    it &quot;can return a single record that matches a updated at&quot; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="112">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    merchant1 = create(:merchant, updated_at: &quot;2012-03-27 14:53:59 UTC&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="113">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="114">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    get &quot;/api/v1/merchants/find?updated_at=#{merchant1.updated_at}&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="115">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    merchant = JSON.parse(response.body)[&quot;data&quot;]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="116">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="117">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(response).to be_successful</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="118">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(merchant[0][&quot;attributes&quot;][&quot;id&quot;]).to eq(merchant1.id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="119">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="120">
             
             
 

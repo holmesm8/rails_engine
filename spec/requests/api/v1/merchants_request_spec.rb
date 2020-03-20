@@ -97,4 +97,24 @@ describe "Merchants API" do
     expect(response).to be_successful
     expect(merchant[0]["attributes"]["id"]).to eq(merchant1.id)
   end
+
+    it "can return a single record that matches a created at" do
+    merchant1 = create(:merchant, created_at: "2012-03-27 14:53:59 UTC")
+
+    get "/api/v1/merchants/find?created_at=#{merchant1.created_at}"
+    merchant = JSON.parse(response.body)["data"]
+
+    expect(response).to be_successful
+    expect(merchant[0]["attributes"]["id"]).to eq(merchant1.id)
+  end
+
+    it "can return a single record that matches a updated at" do
+    merchant1 = create(:merchant, updated_at: "2012-03-27 14:53:59 UTC")
+
+    get "/api/v1/merchants/find?updated_at=#{merchant1.updated_at}"
+    merchant = JSON.parse(response.body)["data"]
+
+    expect(response).to be_successful
+    expect(merchant[0]["attributes"]["id"]).to eq(merchant1.id)
+  end
 end
