@@ -77,4 +77,15 @@ describe "Items API" do
     expect(response).to be_successful
     expect(merchant[:attributes][:id]).to eq(merchant1.id)
   end
+
+  it "can return a single record that matches an attribute" do
+    merchant1 = create(:merchant)
+    item1 = create(:item, merchant_id: merchant1.id)
+
+    get "/api/v1/items/find?name=#{item1.name}"
+
+    item = JSON.parse(response.body)["data"]
+    expect(response).to be_successful
+    expect(item[0]["attributes"]["name"]).to eq(item1.name)
+  end
 end
