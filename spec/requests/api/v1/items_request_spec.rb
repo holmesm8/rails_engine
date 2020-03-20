@@ -133,17 +133,25 @@ describe "Items API" do
     expect(item[0]["attributes"]["merchant_id"]).to eq(item2.merchant_id)
   end
 
-  # it "can return a single record that matches a created at" do
-  #   merchant1 = create(:merchant)
-  #   item1 = create(:item, merchant_id: merchant1.id)
+  it "can return a single record that matches a created at" do
+    merchant1 = create(:merchant)
+    item1 = create(:item, merchant_id: merchant1.id, created_at: "2012-03-27 14:53:59 UTC")
 
-  #   get "/api/v1/items/find?unit_price=#{item1.created_at}"
-  #   item = JSON.parse(response.body)["data"]
-  #   require 'pry'; binding.pry
+    get "/api/v1/items/find?created_at=#{item1.created_at}"
+    item = JSON.parse(response.body)["data"]
 
-  #   expect(response).to be_successful
-  #   expect(item[0]["attributes"]["unit_price"]).to eq(item1.unit_price)
-  # end
+    expect(response).to be_successful
+    expect(item[0]["attributes"]["id"]).to eq(item1.id)
+  end
 
+    it "can return a single record that matches a updated at" do
+    merchant1 = create(:merchant)
+    item1 = create(:item, merchant_id: merchant1.id, updated_at: "2012-03-27 14:53:59 UTC")
 
+    get "/api/v1/items/find?updated_at=#{item1.updated_at}"
+    item = JSON.parse(response.body)["data"]
+
+    expect(response).to be_successful
+    expect(item[0]["attributes"]["id"]).to eq(item1.id)
+  end
 end
