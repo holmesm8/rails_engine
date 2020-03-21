@@ -154,4 +154,45 @@ describe "Items API" do
     expect(response).to be_successful
     expect(item[0]["attributes"]["id"]).to eq(item1.id)
   end
+
+  it "can return matches of items by name" do
+    merchant1 = create(:merchant)
+    item1 = create(:item, name: "Matteo", merchant_id: merchant1.id)
+    item2 = create(:item, name: "Matt", merchant_id: merchant1.id)
+    item3 = create(:item, name: "Matt", merchant_id: merchant1.id)
+
+    get "/api/v1/items/find_all?name=#{"Matt"}"
+      
+    expect(response).to be_successful
+      
+    items = JSON.parse(response.body)["data"]
+
+    expect(items.count).to eq(3)
+  end
+
+  it "can return matches of items by description" do
+    merchant1 = create(:merchant)
+    item1 = create(:item, description: "cool", merchant_id: merchant1.id)
+    item2 = create(:item, description: "cool", merchant_id: merchant1.id)
+
+    get "/api/v1/items/find_all?description=#{"cool"}"
+      
+    expect(response).to be_successful
+      
+    items = JSON.parse(response.body)["data"]
+    expect(items.count).to eq(2)
+  end
+
+  it "can return matches of items by merchant_id" do
+    merchant1 = create(:merchant)
+    item1 = create(:item, merchant_id: merchant1.id)
+    item2 = create(:item, merchant_id: merchant1.id)
+
+    get "/api/v1/items/find_all?merchant_id=#{}"
+      
+    expect(response).to be_successful
+      
+    items = JSON.parse(response.body)["data"]
+    expect(items.count).to eq(2)
+  end
 end
