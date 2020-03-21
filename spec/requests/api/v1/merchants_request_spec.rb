@@ -117,4 +117,43 @@ describe "Merchants API" do
     expect(response).to be_successful
     expect(merchant[0]["attributes"]["id"]).to eq(merchant1.id)
   end
+
+  it "can find all merchants by partial name" do
+    merchant1 = create(:merchant, name: "Matteo")
+    merchant2 = create(:merchant, name: "Matt")
+    merchant3 = create(:merchant, name: "Matty")
+
+    get "/api/v1/merchants/find_all?name=matt"
+
+    merchants = JSON.parse(response.body)["data"]
+
+    expect(response).to be_successful
+    expect(merchants.count).to eq(3)
+  end
+
+  it "can find merchant with name and created_at" do
+    merchant1 = create(:merchant, name: "Matteo", created_at: "2012-03-27 14:53:59 UTC")
+    merchant2 = create(:merchant, name: "Dope", created_at: "2012-03-27 14:53:60 UTC")
+    merchant3 = create(:merchant, name: "Matty", created_at: "2012-03-27 14:53:59 UTC")
+
+    get "/api/v1/merchants/find_all?name=mat&created_at=2012-03-27 14:53:59 UTC"
+
+    merchants = JSON.parse(response.body)["data"]
+
+    expect(response).to be_successful
+    expect(merchants.count).to eq(2)
+  end
+
+  it "can find merchant with name and updated_at" do  
+    merchant1 = create(:merchant, name: "Matteo", updated_at: "2012-03-27 14:53:59 UTC")
+    merchant2 = create(:merchant, name: "Dope", updated_at: "2012-03-27 14:53:60 UTC")
+    merchant3 = create(:merchant, name: "Matty", updated_at: "2012-03-27 14:53:59 UTC")
+
+    get "/api/v1/merchants/find_all?name=mat&updated_at=2012-03-27 14:53:59 UTC"
+
+    merchants = JSON.parse(response.body)["data"]
+
+    expect(response).to be_successful
+    expect(merchants.count).to eq(2)
+  end
 end
