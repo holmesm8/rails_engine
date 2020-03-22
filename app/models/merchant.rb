@@ -28,4 +28,12 @@ class Merchant < ApplicationRecord
     .group(:id))
     merchants.sum(&:revenue)
   end
+
+  def self.merchants_with_most_items_sold(quantity)
+    joins(:transactions, :invoice_items)
+    .where("transactions.result = 'success'")
+    .select('merchants.*, sum(invoice_items.quantity) AS sold')
+    .group(:id).order('sold DESC')
+    .limit(quantity.to_i)
+  end
 end
