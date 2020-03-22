@@ -55,8 +55,7 @@ describe "Merchants Business Intelligence" do
     expect(response).to be_successful
     
     merchant_revenue = JSON.parse(response.body, symbolize_names: true)[:data]
-    require 'pry'; binding.pry
-
+    
     expect(merchant_revenue[:attributes][:revenue].to_f.round(2)).to eq(1)
   end
 end

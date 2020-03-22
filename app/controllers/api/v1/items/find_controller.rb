@@ -9,9 +9,9 @@ class Api::V1::Items::FindController < ApplicationController
 
   def show
     if find_params[:name] || find_params[:description]
-      render json: ItemSerializer.new(Item.where(request.query_parameters))
+      render json: ItemSerializer.new(Item.where('name ILIKE ?', "%#{find_params[:name]}%"))
     else
-      render json: ItemSerializer.new(Item.where(find_params))
+      render json: ItemSerializer.new(Item.where('description ILIKE ?', "%#{find_params[:description]}%"))
     end
   end
 
