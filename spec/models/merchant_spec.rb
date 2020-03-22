@@ -40,10 +40,16 @@ RSpec.describe Merchant, type: :model do
       @transaction4 = create(:transaction, invoice_id: @invoice4.id)
     end
       
-    it "#merchant_revenue" do
+    it "#merchants_with_most_revenue(quantity)" do
       expected_results = [@merchant4, @merchant3, @merchant2]
 
       expect(Merchant.merchants_with_most_revenue(3)).to eq(expected_results)
+    end
+
+    it "#merchant_revenue" do
+      expected_results = 1
+
+      expect(Merchant.merchant_revenue(@merchant1.id)).to eq(expected_results)
     end
   end
 end
