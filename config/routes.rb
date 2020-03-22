@@ -16,6 +16,7 @@ Rails.application.routes.draw do
         get "/find", to: "find#show"
         get "/find_all", to: "find#index"
         get "/most_revenue", to: "revenue#index"
+        get "/:id/revenue", to: "revenue#show"
       end
       resources :merchants, except: [:new, :edit] do
         scope module: 'merchants' do

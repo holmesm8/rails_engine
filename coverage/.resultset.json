@@ -208,8 +208,8 @@
         "lines": [
           1,
           1,
-          2,
-          2,
+          3,
+          3,
           null,
           null
         ]
@@ -259,7 +259,7 @@
         "lines": [
           1,
           1,
-          5,
+          9,
           1,
           1,
           null,
@@ -284,8 +284,8 @@
         "lines": [
           1,
           1,
-          5,
-          5,
+          9,
+          9,
           1,
           1,
           null,
@@ -309,7 +309,7 @@
         "lines": [
           1,
           1,
-          5,
+          9,
           null,
           null
         ]
@@ -326,13 +326,17 @@
           null,
           1,
           null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
           1,
           null,
           null,
           null,
-          null,
-          null,
-          null,
+          1,
           null,
           null
         ]
@@ -341,9 +345,9 @@
         "lines": [
           1,
           1,
-          5,
-          5,
-          5,
+          9,
+          9,
+          9,
           1,
           null,
           null
@@ -380,6 +384,7 @@
           1,
           1,
           1,
+          1,
           null,
           1,
           1,
@@ -393,6 +398,11 @@
       },
       "/Users/mattholmes/turing/3module/projects/rails_engine/app/controllers/api/v1/merchants/revenue_controller.rb": {
         "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
           1,
           1,
           1,
@@ -417,11 +427,12 @@
           1,
           1,
           1,
-          null,
+          1,
+          1,
           null
         ]
       }
     },
-    "timestamp": 1584837520
+    "timestamp": 1584843715
   }
 }
