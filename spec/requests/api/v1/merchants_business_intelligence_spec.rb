@@ -39,13 +39,13 @@ describe "Merchants Business Intelligence" do
     expect(merchants.count).to eq(3)
   end
 
-  # it "sends a list of items" do
-  #   get "/api/v1/merchants/most_revenue?quanity=5"
+  it "returns the total revenue of a single merchant" do
+    get "/api/v1/merchants/#{@merchant1.id}/revenue"
 
-  #   expect(response).to be_successful
+    expect(response).to be_successful
 
-  #   merchants = JSON.parse(response.body, symbolize_names: true)[:data]
+    merchant_revenue = JSON.parse(response.body, symbolize_names: true)[:data]
 
-  #   expect(merchants.count).to eq(3)
-  # end
+    expect(merchant_revenue[:attributes][:revenue]).to eq(1)
+  end
 end
