@@ -20,4 +20,12 @@ class Merchant < ApplicationRecord
     .select('merchants.*, sum(invoice_items.unit_price * invoice_items.quantity) AS revenue')
     .group(:id)).first.revenue
   end
+
+  def self.total_revenue_by_date_range(start_date, end_date)
+    merchants = (joins(:invoice_items, :transactions)
+    .where(created_at: start_date..end_date, transactions: {result: "success"})
+    .select('merchants.*, sum(invoice_items.unit_price * invoice_items.quantity) AS revenue')
+    .group(:id))
+    merchants.sum(&:revenue)
+  end
 end

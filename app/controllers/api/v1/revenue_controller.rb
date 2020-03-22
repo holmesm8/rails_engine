@@ -1,8 +1,4 @@
-class Api::V1::Merchants::RevenueController < ApplicationController
-  def index
-    render json: MerchantSerializer.new(Merchant.merchants_with_most_revenue(params[:quantity]))
-  end
-
+class Api::V1::RevenueController < ApplicationController
   def show
     if params[:start] && params[:end]
       render json: {data: {id: params[:id].to_i, attributes: {revenue: total_revenue}}}
