@@ -195,6 +195,4 @@ describe "Items API" do
     items = JSON.parse(response.body)["data"]
     expect(items.count).to eq(2)
   end
-
-  
 end
