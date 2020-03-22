@@ -7,13 +7,17 @@ class Merchant < ApplicationRecord
   has_many :transactions, through: :invoices
 
   def self.merchants_with_most_revenue(quantity)
-    # require 'pry'; binding.pry
-    joins(:transactions, :invoice_items).where("transactions.result = 'success'").select('merchants.*, sum(invoice_items.unit_price * invoice_items.quantity) AS revenue').group(:id).order('revenue DESC, name').limit(quantity.to_i)
+    joins(:transactions, :invoice_items)
+    .where("transactions.result = 'success'")
+    .select('merchants.*, sum(invoice_items.unit_price * invoice_items.quantity) AS revenue')
+    .group(:id).order('revenue DESC, name')
+    .limit(quantity.to_i)
   end
 
-  # def self.merchant_revenue(merchant_id)
-  #   require 'pry'; binding.pry
-  #   Merchant.joins(:transactions).joins(:invoice_items).where("transactions.result = 'success'").select('merchants.*, sum(in
-  #   voice_items.unit_price * invoice_items.quantity) as revenue').group(:id)
-  # end
+  def self.merchant_revenue(merchant_id)
+    (joins(:transactions, :invoice_items)
+    .where("transactions.result = 'success' AND merchants.id = #{merchant_id}")
+    .select('merchants.*, sum(invoice_items.unit_price * invoice_items.quantity) AS revenue')
+    .group(:id)).first.revenue
+  end
 end
