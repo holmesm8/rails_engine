@@ -8,10 +8,10 @@ class Merchant < ApplicationRecord
 
   def self.merchants_with_most_revenue(quantity)
     joins(:transactions, :invoice_items)
-    .where("transactions.result = 'success'")
     .select('merchants.*, sum(invoice_items.unit_price * invoice_items.quantity) AS revenue')
-    .group(:id).order('revenue DESC, name')
+    .group(:id).order('revenue DESC')
     .limit(quantity.to_i)
+    # .where("transactions.result = 'success'")
   end
 
   def self.merchant_revenue(merchant_id)
